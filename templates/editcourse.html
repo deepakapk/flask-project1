@@ -1,0 +1,50 @@
+{% extends "adminlayout.html" %}
+{% block body %}
+
+
+<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="{{url_for('static',filename='css/A.style.css.pagespeed.cf.0Rx13v0Azw.css')}}">
+<section class="ftco-section">
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-md-6 text-center mb-5">
+<h2 class="heading-section">Edit And Delete Courses</h2>
+</div>
+</div>
+<div class="row">
+<div class="col-md-12">
+<div class="table-wrap">
+<table class="table">
+<thead class="thead-primary">
+<tr>
+<th>S_No</th>
+<th>COURSE_NAME</th>
+<th>CATEGORY</th>
+<th>IMG_FILE_NAME</th>
+<th>EDIT</th>
+<th>DELETE</th>
+</tr>
+</thead>
+<tbody>
+{% for course in courses %}
+<tr>
+<th scope="row">{{course.S_No}}</th>
+<td>{{course.course_name}}</td>
+<td>{{course.category}}</td>
+<td>{{course.img_file}}</td>
+<td><a href="/admin/{{admin.Admin_id}}/editcourse/{{course.S_No}}"><button type="submit" >Edit</button></a></td>
+<td><a href="/admin/{{admin.Admin_id}}/editcourse/{{course.S_No}}"><button type="submit" >Delete</button></a></td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+    {% endblock %}
+</div>
+
+</section>
+

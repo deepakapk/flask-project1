@@ -1,0 +1,207 @@
+{% extends "layout.html" %}
+{% block body %}
+
+
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="{{url_for('static',filename='css/coursecss/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/coursecss/owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/coursecss/slicknav.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/coursecss/flaticon.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/coursecss/progressbar_barfiller.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/coursecss/gijgo.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/coursecss/animate.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/coursecss/animated-headline.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/coursecss/magnific-popup.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/coursecss/fontawesome-all.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/coursecss/themify-icons.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/coursecss/slick.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/coursecss/nice-select.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/coursecss/style.css')}}">
+
+
+        <!-- btech Courses area start -->
+
+        <div class="courses-area section-padding40 fix">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xl-7 col-lg-8">
+                        <div class="section-tittle text-center mb-55">
+                            <h2>B.tech courses</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    {% for course in courses %}
+                        {% if course.category=="btech" %}
+                    <div class="col-lg-4">
+
+                        <div class="properties properties2 mb-30">
+                            <div class="properties__card">
+
+                                <div class="properties__img overlay1">
+                                    <img src="{{course.img_file}}" alt="{{course.img_file}}">
+                                </div>
+                                <div class="properties__caption">
+
+                                    <h3>{{course.course_name}}</h3>
+
+
+                                    <div class="properties__footer d-flex justify-content-between align-items-center">
+                                        <div class="restaurant-name">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                    </div>
+
+            </div>
+
+        </div>
+
+
+
+  <!-- mtech Courses area start -->
+        <div class="courses-area section-padding40 fix">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xl-7 col-lg-8">
+                        <div class="section-tittle text-center mb-55">
+                            <h2>M. Tech courses</h2>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    {% for course in courses %}
+                {% if course.category=="mtech" %}
+                    <div class="col-lg-4">
+                        <div class="properties properties2 mb-30">
+                            <div class="properties__card">
+                                <div class="properties__img overlay1">
+                                    <img src="{{course.img_file}}" alt="{{course.img_file}}">
+                                </div>
+                                <div class="properties__caption">
+
+                                    <h3>{{course.course_name}}</h3>
+
+                                    <div class="properties__footer d-flex justify-content-between align-items-center">
+                                        <div class="restaurant-name">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                    </div>
+            </div>
+
+        </div>
+
+
+ <!-- other Courses area start -->
+        <div class="courses-area section-padding40 fix">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xl-7 col-lg-8">
+                        <div class="section-tittle text-center mb-55">
+                            <h2>Pharma courses</h2>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    {% for course in courses %}
+                    {% if course.category=="pharma" %}
+                    <div class="col-lg-4">
+                        <div class="properties properties2 mb-30">
+                            <div class="properties__card">
+                                <div class="properties__img overlay1">
+                                   <img src="{{course.img_file}}" alt="{{course.img_file}}">
+                                </div>
+                                <div class="properties__caption">
+
+                                    <h3>{{course.course_name}}</h3>
+
+                                    <div class="properties__footer d-flex justify-content-between align-items-center">
+                                        <div class="restaurant-name">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                    </div>
+            </div>
+
+        </div>
+
+
+
+  <!-- other Courses area start -->
+        <div class="courses-area section-padding40 fix">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xl-7 col-lg-8">
+                        <div class="section-tittle text-center mb-55">
+                            <h2>Other courses</h2>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    {% for course in courses %}
+                    {% if course.category=="other" %}
+                    <div class="col-lg-4">
+                        <div class="properties properties2 mb-30">
+                            <div class="properties__card">
+                                <div class="properties__img overlay1">
+                                   <img src="{{course.img_file}}" alt="{{course.img_file}}">
+                                </div>
+                                <div class="properties__caption">
+
+                                    <h3>{{course.course_name}}</h3>
+
+                                    <div class="properties__footer d-flex justify-content-between align-items-center">
+                                        <div class="restaurant-name">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                    </div>
+            </div>
+
+        </div>
+
+
+{% endblock %}

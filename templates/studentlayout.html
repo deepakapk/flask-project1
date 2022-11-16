@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Informatics College</title>
+	<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="Keywords" content="College, Pokhara, IT College, Lions Marga, college in pokhara, nepalIT">
+ <meta name="author" content="Bishworaj Poudel">
+ <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/style.css')}}">
+<script src="{{url_for('static',filename='javascript/js.js')}}"></script>
+<script src="{{url_for('static',filename='javascript/login.js')}}"></script>
+<script src="{{url_for('static',filename='javascript/validatename.js')}}"></script>
+
+
+
+</head>
+<body class="body">
+<header class="mainheader">
+	<img src="images/logo.png">
+	<content id="search">
+
+	</content>
+	<nav>
+		<ul>
+			<li><a href="/dashboard/student/{{student.Student_id}}">Profile</a></li>
+<!--			<li><a href="/student/{{student.Student_id}}/editcourse">course</a></li>-->
+<!--			<li><a href="/student/{{student.Student_id}}/viewcontact">Contact</a></li>-->
+<!--			<li><a href="/student/{{student.Student_id}}/editpost">Post</a></li>-->
+			<li><a href="/logout">Logout</a></li>
+		</ul>
+	</nav>
+    </header>
+    {% block body %} {% endblock %}
+    <footer class="mainFooter">
+	<p>Copyright &copy <a href="https://www.facebook.com/" target="_blank">Deepak Baghel</a> </p>
+	<center>
+	<a href="https://www.facebook.com/" target="_blank">Facebook</a>
+	<a href="https://www.twitter.com/" target="_blank">Twitter</a>
+	<a href="https://www.youtube.com/" target="_blank">Youtube</a>
+	</center>
+</footer>
+</body>
+</html>

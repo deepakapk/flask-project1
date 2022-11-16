@@ -1,0 +1,52 @@
+{% extends "adminlayout.html" %}
+{% block body %}
+
+
+<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="{{url_for('static',filename='css/A.style.css.pagespeed.cf.0Rx13v0Azw.css')}}">
+<section class="ftco-section">
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-md-6 text-center mb-5">
+<h2 class="heading-section">Edit And Delete Posts</h2>
+</div>
+</div>
+<div class="row">
+<div class="col-md-12">
+<div class="table-wrap">
+<table class="table">
+<thead class="thead-primary">
+<tr>
+<th>S_No</th>
+<th>TITLE</th>
+<th>CONTENT</th>
+<th>WRITTEN_BY</th>
+<th>DATE</th>
+<th>EDIT</th>
+<th>DELETE</th>
+</tr>
+</thead>
+<tbody>
+{% for post in posts %}
+<tr>
+<th scope="row">{{post.S_No}}</th>
+<td>{{post.Title}}</td>
+<td>{{post.content}}</td>
+<td>{{post.Written_by}}</td>
+<td>{{post.Date}}</td>
+<td><a href="/admin/{{admin.Admin_id}}/editpost/{{post.S_No}}"><button type="submit" >Edit</button></a></td>
+<td><a href="/admin/{{admin.Admin_id}}/editpost/{{post.S_No}}"><button type="submit" >Delete</button></a></td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+    {% endblock %}
+</div>
+
+</section>
+

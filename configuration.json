@@ -1,0 +1,11 @@
+{
+  "params":
+  {
+    "local_server": "True",
+    "local_uri": "mysql://root:@localhost/college",
+    "prod_uri": "mysql://root:@localhost/college",
+    "admin_session" : "admin",
+    "student_session" : "student",
+    "teacher_session" : "teacher"
+  }
+}

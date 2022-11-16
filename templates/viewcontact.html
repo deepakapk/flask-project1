@@ -1,0 +1,50 @@
+{% extends "adminlayout.html" %}
+{% block body %}
+
+
+<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="{{url_for('static',filename='css/A.style.css.pagespeed.cf.0Rx13v0Azw.css')}}">
+<section class="ftco-section">
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-md-6 text-center mb-5">
+<h2 class="heading-section">View Contacts</h2>
+</div>
+</div>
+<div class="row">
+<div class="col-md-12">
+<div class="table-wrap">
+<table class="table">
+<thead class="thead-primary">
+<tr>
+<th>S_No</th>
+<th>NAME</th>
+<th>PHONE</th>
+<th>EMAIL</th>
+<th>MESSAGE</th>
+<th>DATE</th>
+</tr>
+</thead>
+<tbody>
+{% for contact in contacts %}
+<tr>
+<th scope="row">{{contact.S_No}}</th>
+<td>{{contact.Name}}</td>
+<td>{{contact.Phone}}</td>
+<td>{{contact.Email}}</td>
+<td>{{contact.Message}}</td>
+<td>{{contact.Date}}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+    {% endblock %}
+</div>
+
+</section>
+

@@ -1,0 +1,58 @@
+{% extends "adminlayout.html" %}
+{% block body %}
+
+
+<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="{{url_for('static',filename='css/A.style.css.pagespeed.cf.0Rx13v0Azw.css')}}">
+<section class="ftco-section">
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-md-6 text-center mb-5">
+<h2 class="heading-section">Edit And Delete Courses</h2>
+    <a href="/admin/{{admin.Admin_id}}/addstudent"><button type="submit" >ADD STUDENT</button></a>
+</div>
+</div>
+<div class="row">
+<div class="col-md-12">
+<div class="table-wrap">
+<table class="table">
+<thead class="thead-primary">
+<tr>
+<th>STUDENT_ID</th>
+<th>Name</th>
+<th>EMAIL</th>
+<th>PHONE</th>
+<th>PASS</th>
+<th>SEM</th>
+<th>COURSE</th>
+<th>EDIT</th>
+<th>DELETE</th>
+</tr>
+</thead>
+<tbody>
+{% for student in students %}
+<tr>
+<td>{{student.Student_id}}</td>
+<td>{{student.Name}}</td>
+<td>{{student.Email}}</td>
+<td>{{student.Phone}}</td>
+<td>{{student.Pass}}</td>
+<td>{{student.Sem}}</td>
+<td>{{student.Course}}</td>
+
+<td><a href="/admin/{{admin.Admin_id}}/editstudent/{{student.Student_id}}"><button type="submit" >Edit</button></a></td>
+<td><a href="/admin/{{admin.Admin_id}}/editstudent/{{student.Student_id}}"><button type="submit" >Delete</button></a></td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+    {% endblock %}
+</div>
+
+</section>
+
